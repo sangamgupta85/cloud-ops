@@ -1,0 +1,23 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: cloud_ops_dev
+  pool: 5
+  username: <%= ENV['MYSQL_USER'] || 'root' %>
+  password: <%= ENV['MYSQL_PASSWORD'] || 'root' %>
+  host: <%= ENV['MYSQL_HOST'] || '127.0.0.1' %>
+  socket: /tmp/mysql.sock
+
+test: &test
+  adapter: mysql2
+  timeout: 5000
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  database: cloud_ops_dev
+  port: 3306
+  username: <%= ENV['MYSQL_USER'] || 'root' %>
+  password: <%= ENV['MYSQL_PASSWORD'] || 'root' %>
+  host: <%= ENV['MYSQL_HOST'] || '127.0.0.1' %>
+  socket: /tmp/mysql.sock
